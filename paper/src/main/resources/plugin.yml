@@ -1,0 +1,93 @@
+name: NetworkCore-Paper
+version: 0.1.0
+main: net.networkcore.paper.NetworkCorePaperPlugin
+api-version: '26.2'
+author: NetworkCore
+
+libraries:
+  - org.xerial:sqlite-jdbc:3.50.3.0
+
+softdepend:
+  - LuckPerms
+  - PlaceholderAPI
+  - WorldGuard
+  - Essentials
+  - EssentialsSpawn
+  - BentoBox
+  - BSkyBlock
+  - BentoBox-BSkyBlock
+
+commands:
+  networkcore:
+    description: NetworkCore administration command.
+    usage: /networkcore <status|reload>
+  skyblockmenu:
+    description: Open the Nexora Skyblock menu.
+    usage: /skyblockmenu
+    aliases:
+      - sbmenu
+  toggleskyblockmenu:
+    description: Toggle the Skyblock Menu hotbar item.
+    usage: /toggleskyblockmenu
+  shop:
+    description: Open the Nexora Skyblock shop.
+    usage: /shop
+    aliases:
+      - skyshop
+  sell:
+    description: Open the Nexora Skyblock sell menu.
+    usage: /sell
+  profile:
+    description: Open your Hub Player Profile.
+    usage: /profile
+    aliases:
+      - myprofile
+  settings:
+    description: Open your Nexora Hub Settings.
+    usage: /settings
+    aliases:
+      - hubsettings
+  sidebar:
+    description: Toggle the Nexora sidebar.
+    usage: /sidebar [on|off]
+    aliases:
+      - togglesidebar
+      - scoreboard
+  watchdog:
+    description: Nexora Watchdog staff tools.
+    usage: /watchdog <inspect|history|alerts|test>
+    permission: networkcore.watchdog.staff
+
+permissions:
+  network.admin.reload:
+    default: op
+  network.admin.status:
+    default: op
+  network.hub.build:
+    default: op
+  network.hub.fly:
+    default: op
+  network.admin.sethubspawn:
+    default: op
+  network.admin.setskyblockspawn:
+    default: op
+  network.skyblock.build:
+    default: op
+  network.skyblock.menu:
+    default: true
+  network.skyblock.shop:
+    default: true
+  network.skyblock.sell:
+    default: true
+  network.profile.open:
+    default: true
+  network.hub.settings:
+    default: true
+  network.sidebar:
+    default: true
+  networkcore.watchdog.staff:
+    description: Access to Nexora Watchdog staff commands.
+    default: op
+  networkcore.watchdog.alerts:
+    description: Receive Nexora Watchdog live alerts.
+    default: op
